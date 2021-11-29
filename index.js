@@ -1,72 +1,57 @@
 const inquirer = require('inquirer');
 const fs = require('fs')
+const Intern = require('./lib/Intern')
+const Engineer = require('./lib/Engineer')
+const Manager = require('./lib/Manager')
 
-const generateMarkdown = require("./generateMarkdown")
+const teamArray = []
 
-// TODO: Create an array of questions for user input
-const questions = [
+function addManager(){
+  inquirer.prompt([
     {
-        type: 'input',
-        name: 'title',
-        message: 'What is title of your project?',
-      },
-      {
-        type: 'input',
-        name: 'description',
-        message: 'What is the purpose of this application?',
-      },
-      {
-        type: 'input',
-        name: 'installation',
-        message: 'How do you install this application?',
-      },
-      {
-        type: 'input',
-        name: 'usage',
-        message: 'Are there any special nuances to use this application?',
-      },
-      {
-        type: 'input',
-        name: 'license',
-        message: 'What license is the application covered under?',
-      },
-      {
-        type: 'input',
-        name: 'contributing',
-        message: 'Who contributed to this project?',
-      },
-      {
-        type: 'input',
-        name: 'tests',
-        message: 'What command to run tests?',
-      },
-      {
-        type: 'input',
-        name: 'email',
-        message: 'What is your email?',
-      },
-      {
-        type: 'input',
-        name: 'github',
-        message: 'What is your GitHub user name?',
-      },
-      
-];
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  return fs.writeFileSync(fileName, data)
-	// If there is any error in writing to the file, return
- // Log this message if the file was written to successfully
-}
-// TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions)
-    .then(res => {
-        const readme = generateMarkdown(res)
-        writeToFile('README.md', readme);
-    })
+      type: "input",
+      name: "name",
+      message: 'What is your manager\'s name?',
+    },
+    {
+      type: "input",
+      name: "id",
+      message: 'What is your manager\'s id?',
+    },
+    {
+      type: "input",
+      name: "email",
+      message: 'What is your manager\'s email?',
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: 'What is your manager\'s office number?',
+    }
+  ])
+  .then(res=> {
+    console.log(res)
+    const {name, id, email, officeNumber} = res
+    const manager = new Manager (name, id, email, officeNumber)
+  teamArray.push(manager)
+  crossRoads();
+  })
 }
 
-// Function call to initialize app
-init();
+function addEngineer(){
+
+}
+
+function addIntern(){
+
+}
+
+function crossRoads(){
+
+}
+
+function createTeam(){
+
+}
+
+addManager();
