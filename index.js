@@ -125,8 +125,15 @@ function crossRoads(){
   })
 }
 
+function writeToFile(fileName, data) {
+  return fs.writeFileSync(fileName, data)
+}
+  
 function createTeam(){
-  console.log(teamArray)
+  .then(res => {
+    const renderHTML = renderHTML(res)
+    writeToFile('index.html', renderHTML)
+  })
 }
 
 addManager();

@@ -30,33 +30,33 @@ function generateManagerCard(manager){
   </div>`
 }
 
-function generateEngineerCard(manager){
+function generateEngineerCard(engineer){
    return `<div class="card" style="max-width: 18rem;">
     <div class="card-header text-white bg-primary mb-3">
-        <h2>${manager.getName()}</h2>
+        <h2>${engineer.getName()}</h2>
         <h3><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
     </div>
     <div class="card-body bg-light">
       <ul>
-          <li>ID:${manager.getId()}</li>
-          <li>Email:${manager.getEmail()}</li>
-          <li>Office Number:${manager.getOfficeNumber()}</li>
+          <li>ID:${engineer.getId()}</li>
+          <li>Email:${engineer.getEmail()}</li>
+          <li>Office Number:${engineer.getGithub()}</li>
       </ul>
     </div>
   </div>`
 }
 
-function generateManagerCard(manager){
+function generateInternCard(Intern){
    return `<div class="card" style="max-width: 18rem;">
     <div class="card-header text-white bg-primary mb-3">
-        <h2>${manager.getName()}</h2>
+        <h2>${intern.getName()}</h2>
         <h3><i class="fas fa-mug-hot mr-2"></i>Manager</h3>
     </div>
     <div class="card-body bg-light">
       <ul>
-          <li>ID:${manager.getId()}</li>
-          <li>Email:${manager.getEmail()}</li>
-          <li>Office Number:${manager.getOfficeNumber()}</li>
+          <li>ID:${intern.getId()}</li>
+          <li>Email:${intern.getEmail()}</li>
+          <li>Office Number:${intern.getSchool()}</li>
       </ul>
     </div>
   </div>`
