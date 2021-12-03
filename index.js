@@ -129,11 +129,11 @@ function writeToFile(fileName, data) {
   return fs.writeFileSync(fileName, data)
 }
   
-function createTeam(){
-  .then(res => {
-    const renderHTML = renderHTML(res)
-    writeToFile('index.html', renderHTML)
-  })
-}
+// function createTeam(){
+//   .then(res => {
+//     const renderHTML = renderHTML(res)
+//     writeToFile('index.html', renderHTML)
+//   })
+// }
 
 addManager();
