@@ -125,9 +125,9 @@ function crossRoads(){
   })
 }
 
-function writeToFile(fileName, data) {
-  return fs.writeFileSync(fileName, data)
-}
+// function writeToFile(fileName, data) {
+//   return fs.writeFileSync(fileName, data)
+// }
   
 // function createTeam(){
 //   .then(res => {
