@@ -1,0 +1,37 @@
+.dev-header {
+    background-color: red;
+    color: white;
+}
+
+.teams {
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+.employee-info {
+    margin: 20px;
+    border: none;
+    max-width: 250px;
+    color: white;
+    width: 85%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    justify-content: space-between;
+    box-shadow: 3px 3px 6px gray;
+}
+
+
+.card-body {
+    background-color: white;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.list-group-item {
+    color: black;
+}
