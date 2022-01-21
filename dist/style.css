@@ -23,14 +23,12 @@
     box-shadow: 3px 3px 6px gray;
 }
 
-
 .card-body {
     background-color: white;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
-
 
 .list-group-item {
     color: black;
