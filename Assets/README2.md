@@ -66,7 +66,7 @@ It is recommended that you start with a directory structure that looks like the 
 │   ├── Intern.test.js
 │   └── Manager.test.js
 ├── dist/                  // rendered output (HTML) and CSS style sheet      
-├── lib/                   // classes
+├── lib/                    // classes
 ├── src/                   // template helper code 
 ├── .gitignore             // indicates which folders and files Git should ignore
 ├── index.js               // runs the application
