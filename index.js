@@ -8,6 +8,7 @@ const renderHTML = require("./src/htmltemplate")
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'sample.html');
 
+const render = require('./src/htmltemplate.js');
 
 const teamArray = [];
 
