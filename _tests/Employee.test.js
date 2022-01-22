@@ -18,7 +18,7 @@ test("Can set ID", () => {
 });
 
 test("Can set email", () => {
-    const testValue = "test@test.com";
+    const testValue = "sample@sample.com";
     const e = new Employee("foo", 1, testValue);
     expect(e.email).toBe(testValue);
 });
@@ -36,13 +36,13 @@ test("Can get ID with getId()", () => {
 });
 
 test("Can get email with getEmail()", () => {
-    const testValue = "test@test.com";
+    const testValue = "sample@sample.com";
     const e = new Employee("foo", testValue);
     expect(e.getEmail()).toBe(testValue);
 });
 
 test("getRole() => \"Employee\"", () => {
     const testValue = "Employee";
-    const e = new Employee("Sophie", 1, "test@test.com");
+    const e = new Employee("Sophie", 1, "sample@sample.com");
     expect(e.getRole()).toBe(testValue);
 });
