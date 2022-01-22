@@ -136,6 +136,5 @@ function createTeam() {
   fs.writeFileSync(distPath, render(teamArray), 'utf-8');
   }
   createManager();
-}
 
 addManager();
