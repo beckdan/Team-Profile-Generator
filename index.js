@@ -5,7 +5,11 @@ const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const renderHTML = require("./src/htmltemplate")
 
-const teamArray = []
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const distPath = path.join(DIST_DIR, 'sample.html');
+
+
+const teamArray = [];
 
 function addManager(){
   inquirer.prompt([
@@ -125,15 +129,13 @@ function crossRoads(){
   })
 }
 
-// function writeToFile(fileName, data) {
-//   return fs.writeFileSync(fileName, data)
-// }
-  
-// function createTeam(){
-//   .then(res => {
-//     const renderHTML = renderHTML(res)
-//     writeToFile('index.html', renderHTML)
-//   })
-// }
+function createTeam() {
+  if (!fs.existsSync(DIST_DIR)) {
+    fs.mkdirSync(DIST_DIR);
+  }
+  fs.writeFileSync(distPath, render(teamArray), 'utf-8');
+  }
+  createManager();
+}
 
 addManager();
