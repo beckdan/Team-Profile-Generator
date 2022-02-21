@@ -14,7 +14,13 @@ const render = require('./src/htmltemplate.js');
 const IdArray = [];
 const teamArray = [];
 
-console.log('\nTime to generate your team!')
+init();
+
+function init() {
+    console.log('Time to generate your team!\nStart with your manager.'
+    )
+    addManager();
+}
 
 function addManager(){
   inquirer.prompt([
