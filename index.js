@@ -4,13 +4,17 @@ const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
 const renderHTML = require("./src/htmltemplate")
+const path = require('path');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'sample.html');
 
 const render = require('./src/htmltemplate.js');
 
+const IdArray = [];
 const teamArray = [];
+
+console.log('\nTime to generate your team!')
 
 function addManager(){
   inquirer.prompt([
@@ -110,7 +114,7 @@ function crossRoads(){
     {
       type: "list",
       name: "choice",
-      message: "What type of member would you like to add to your team?",
+      message: "What type of team member would you like to add to your team?",
       choices: [
         "Engineer",
         "Intern",
