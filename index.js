@@ -11,7 +11,6 @@ const distPath = path.join(DIST_DIR, 'sample.html');
 
 const render = require('./src/htmltemplate.js');
 
-const IdArray = [];
 const teamArray = [];
 
 init();
