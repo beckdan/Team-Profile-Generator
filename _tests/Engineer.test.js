@@ -3,7 +3,7 @@ const Engineer = require("../lib/Engineer");
 test("Can set GitHub", () => {
     const testValue = "GitHub";
     const e = new Engineer("foo", 1, "sample@sample.com", testValue);
-    expect(e.github).toBe(testValue);
+    expect(e.gitHub).toBe(testValue);
 })
 
 test("getRole => \"Engineer\"", () => {
@@ -15,5 +15,5 @@ test("getRole => \"Engineer\"", () => {
 test("Get GitHub username with getGitHub", () => {
     const testValue = "GitHub";
     const e = new Engineer("foo", 1, "sample@sample.com", testValue);
-    expect(e.getGithub()).toBe(testValue);
+    expect(e.getGitHub()).toBe(testValue);
 })
