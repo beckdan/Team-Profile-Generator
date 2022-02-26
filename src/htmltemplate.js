@@ -1,11 +1,14 @@
 function generateTeamCards(team){
     const html = []
     for(const member of team){
+        console.log(member.getRole())
         switch(member.getRole()){
             case "Manager":
                 html.push(generateManagerCard(member))
+                break
             case "Engineer":
                 html.push(generateEngineerCard(member))
+                break
             case "Intern":
                 html.push(generateInternCard(member))
         }
@@ -34,7 +37,7 @@ function generateEngineerCard(engineer){
    return `<div class="card" style="max-width: 18rem;">
     <div class="card-header text-white bg-primary mb-3">
         <h2>${engineer.getName()}</h2>
-        <h3><i class="fas fa-glasses mr-2"></i>Manager</h3>
+        <h3><i class="fas fa-glasses mr-2"></i>Engineer</h3>
     </div>
     <div class="card-body bg-light">
       <ul>
@@ -50,7 +53,7 @@ function generateInternCard(intern){
    return `<div class="card" style="max-width: 18rem;">
     <div class="card-header text-white bg-primary mb-3">
         <h2>${intern.getName()}</h2>
-        <h3><i class="fas fa-glasses mr-2"></i>Manager</h3>
+        <h3><i class="fas fa-glasses mr-2"></i>Intern</h3>
     </div>
     <div class="card-body bg-light">
       <ul>
