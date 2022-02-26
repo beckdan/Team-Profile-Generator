@@ -21,7 +21,7 @@ This project utilizes:
 - CSS
 
 
-Deployed link: https://beckdan.github.io/current-portfolio/
+Video Walkthrough Link: https://drive.google.com/file/d/1eHx3PcxZgn91qNl8u7I44WghRd3-FC1R/view
 
 ## Technologies
 
