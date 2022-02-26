@@ -6,7 +6,7 @@ test("positive employee instance", () => {
 });
 
 test("Can set name", () => {
-    const name = "Sophie";
+    const name = "Michael";
     const e = new Employee(name);
     expect(e.name).toBe(name);
 });
@@ -24,7 +24,7 @@ test("Can set email", () => {
 });
 
 test("Can get name with getName()", () => {
-    const testValue = "Sophie";
+    const testValue = "Michael";
     const e = new Employee(testValue)
     expect(e.getName()).toBe(testValue);
 });
@@ -43,6 +43,6 @@ test("Can get email with getEmail()", () => {
 
 test("getRole() => \"Employee\"", () => {
     const testValue = "Employee";
-    const e = new Employee("Sophie", 1, "sample@sample.com");
+    const e = new Employee("Michael", 1, "sample@sample.com");
     expect(e.getRole()).toBe(testValue);
 });

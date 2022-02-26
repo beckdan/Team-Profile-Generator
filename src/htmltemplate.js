@@ -40,13 +40,13 @@ function generateEngineerCard(engineer){
       <ul>
           <li>ID:${engineer.getId()}</li>
           <li>Email:${engineer.getEmail()}</li>
-          <li>GitHub:${engineer.getGithub()}</li>
+          <li>GitHub:${engineer.getGitHub()}</li>
       </ul>
     </div>
   </div>`
 }
 
-function generateInternCard(Intern){
+function generateInternCard(intern){
    return `<div class="card" style="max-width: 18rem;">
     <div class="card-header text-white bg-primary mb-3">
         <h2>${intern.getName()}</h2>

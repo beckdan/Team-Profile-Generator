@@ -3,48 +3,70 @@ const fs = require('fs')
 const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
-const renderHTML = require("./src/htmltemplate")
+const Employee = require ('./lib/Employee')
+// const renderHTML = require("./src/htmltemplate")
 const path = require('path');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'sample.html');
 
-const render = require('./src/htmltemplate.js');
-
+const render = require('./src/htmltemplate');
 const teamArray = [];
 
-init();
 
-function init() {
-    console.log('Time to generate your team!\nStart with your manager.'
-    )
-    addManager();
-}
-
+function startApp() {
 function addManager(){
   inquirer.prompt([
     {
       type: "input",
       name: "name",
       message: 'What is your manager\'s name?',
+      validate:(res) => {
+        if (res !== '') {
+          return true;
+        }
+        return 'Enter a valid name.';
+      },
     },
     {
       type: "input",
-      name: "id",
+      name: "managerID",
       message: 'What is your manager\'s id?',
+      validate:(res) => {
+        const pass = res.match(/^[1-9]\d*$/)
+        if (res !== '') {
+          return true;
+        }
+        return 'Enter a valid ID (Number greater than 0).';
+      },
     },
     {
       type: "input",
       name: "email",
       message: 'What is your manager\'s email?',
+      validate:(res) => {
+        const pass = res.match(/\S+@\S+\.\S+/);
+        if (pass) {
+          return true;
+        }
+        return 'Please enter valid email';
+      },
     },
     {
       type: "input",
       name: "officeNumber",
       message: 'What is your manager\'s office number?',
+      validate:(res) => {
+        const pass = res.match(/^[1-9]\d*$/);
+        if (pass) {
+          return true;
+        }
+        return 'Enter a valid Office Number (Number greater than 0).';
+      },
     }
   ])
   .then(res=> {
+    console.log(res);
     const {name, id, email, officeNumber} = res
     const manager = new Manager (name, id, email, officeNumber)
   teamArray.push(manager)
@@ -58,26 +80,52 @@ function addEngineer(){
       type: "input",
       name: "name",
       message: 'What is your engineer\'s name?',
+      validate:(res) => {
+        if (res !== '') {
+          return true;
+        }
+        return 'Enter a valid name.';
+      },
     },
     {
       type: "input",
-      name: "id",
+      name: "engineerID",
       message: 'What is your engineer\'s id?',
+      validate:(res) => {
+        const pass = res.match(/^[1-9]\d*$/)
+        if (res !== '') {
+          return true;
+        }
+        return 'Enter a valid ID (Number greater than 0).';
+      },
     },
     {
       type: "input",
       name: "email",
       message: 'What is your engineer\'s email?',
+      validate:(res) => {
+        const pass = res.match(/\S+@\S+\.\S+/);
+        if (pass) {
+          return true;
+        }
+        return 'Please enter valid email';
+      },
     },
     {
       type: "input",
-      name: "github",
-      message: 'What is your engineer\'s github username?',
+      name: "gitHub",
+      message: 'What is your engineer\'s GitHub username?',
+      validate:(res) => {
+        if (res !== '') {
+          return true;
+        }
+        return 'Please enter valid username.';
+      },
     }
   ])
   .then(res=> {
-    const {name, id, email, github} = res
-    const engineer = new Engineer (name, id, email, github)
+    const {name, id, email, gitHub} = res
+    const engineer = new Engineer (name, id, email, gitHub)
   teamArray.push(engineer)
   crossRoads();
   })
@@ -92,7 +140,7 @@ function addIntern(){
     },
     {
       type: "input",
-      name: "id",
+      name: "internID",
       message: 'What is your intern\'s id?',
     },
     {
@@ -145,6 +193,7 @@ function createTeam() {
   }
   fs.writeFileSync(distPath, render(teamArray), 'utf-8');
   }
-  createManager();
+  addManager();
+}
 
-addManager();
+startApp();
